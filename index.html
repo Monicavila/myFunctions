@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monica Functions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+        <div class="container column is-two-fifths-desktop">
+            <div class="message is-primary">
+                <div class="message-header">
+                <p>Hi! Select a function</p>
+                </div>
+                <div class="message-body">
+                <strong>Pellentesque risus mi</strong>, <a>felis venenatis</a> <em>eleifend lacus</em>.
+                </div>
+                <div class="control column is-full-desktop">
+                    <input class="input" type="text" placeholder="Function input">
+                </div>
+                <div class="field has-addons column is-three-quarters-desktop">
+                    <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                        <select name="functions">
+                        <option value="ForEach">ForEach</option>
+                        <option value="Filter">Filter</option>
+                        <option value="Map">Map</option>
+                        <option value="Find">Find</option>
+                        <option value="FindIndex">FindIndex</option>
+                        <option value="Contains">Contains</option>
+                        <option value="Pluck">Pluck</option>
+                        <option value="Without">Without</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="control">
+                    <button type="submit" class="button is-primary">Choose</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

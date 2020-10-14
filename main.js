@@ -25,7 +25,7 @@ const libreryFunctions = [
         text: 
         `<div style="text-align: justify">
             <p>Implement method <strong>for Each</strong>, wich <a>iterates over the array items, in ascending order.</a>,
-            The provided function may perform any kind of operation on the elements of the given array. 
+            The provided function may perform any kind of <a>operation</a> on the elements of the given array. 
             <em>And returns the index of each object too</em>.</p>
             <br>
             <p>&nbsp;For example</p> 
@@ -35,7 +35,7 @@ const libreryFunctions = [
             <br>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>array</strong> = [[45, 82, 34, 15, 77];</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Operation</strong> : * 5</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You implement this method like array.forEach(callback, * 5)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You implement this method like array.forEach(callback, * 5);</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The answer [ 225, 410, 170, 75, 385 ]</p>
             <br>
             
@@ -59,36 +59,36 @@ const libreryFunctions = [
         name: 'Filter',
         text: 
         `<div style="text-align: justify">
-            <p>Implement method <strong>pluck</strong>, wich <a>takes an array of objects and a property name</a>,
-            and <em>returns an array containing the named property of each object</em>.</p>
+            <p>Implement method <strong>filter</strong>, wich <a>creat a new array</a>,
+            with the elements <em>that have pass the requirement (predicate) check</em>.</p>
             <br>
             <p>&nbsp;For example</p> 
             <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want to know the <strong>'lenght'</strong> <a>of each one</a> 
-            of the objects in the array</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want only <strong>the even</strong> 
+            <a>numbres</a> in the array</p>
             <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>array</strong> = [dog, cats, elephant, carrot];</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Property name</strong> : 'lenght'</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You implement this method like _.pluck(array, 'lenght');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The answer [3, 4, 8, 6]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>array</strong> = [[1, 2, 7, 10];</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Predicate</strong> : evens numbres</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You implement this method like array.filter(% 2 === 0);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The answer [2, 10]</p>
             <br>
             
         </div>
         `,
         placeholder1: `Enter: [array]`,
-        placeholder2: `Enter: 'Property name'`,
+        placeholder2: `Enter: 'Predicate'`,
 
-        code:  function myPluck(objs, name)  {
-                var array = [];
-                var i;
-                for(i = 0; i < objs.length; i++) {
-                    if(objs[i].hasOwnProperty(name)) {
-                        array.push(objs[i][name]);
-                    }
+        code:  Array.prototype.myFilter = function(callback) {
+            let newArray = [];
+            for(let i = 0; i < this.length; i++) {
+                if(callback(this[i]) === true) {
+                    newArray.push(this[i]);
                 }
-                return array;
+            }
+            return newArray;
         }
-        //console.log(myPluck([objs], 'name')),
+        //let filterValue = array.myFilter(element => element > 50);
+        //console.log(filterValue);
     },
     {
         name: 'Map',

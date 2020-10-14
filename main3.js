@@ -1,3 +1,4 @@
+var array = [45, 82, 34, 15, 77];
 
 /*Array.prototype.myForEach = function(callback) {
     for(let i = 0; i < this.length; i++) {
@@ -11,81 +12,83 @@ array.myForEach(element => forEachValue.push(element *5));
 console.log(forEachValue);*/
 
 
-// function myFilter(array, callback) {
-//     const newArray = [];
-//     for(let i = 0; i < array.length; i++ ) {
-//         if(callback(array[i]) === true) {
-//             newArray.push(array[i]);
-//         }
-//     }
-//     return newArray;
-// }
+/*Array.prototype.myFilter = function(callback) {
+    let newArray = [];
+    for(let i = 0; i < this.length; i++) {
+        if(callback(this[i]) === true) {
+            newArray.push(this[i]);
+        }
+    }
+    return newArray;
+}
+let filterValue = array.myFilter(element => element > 50);
+console.log(filterValue);*/
 
-// var array = [4, 9, 16, 25];
-// console.log(myFilter(array, element => element > 9)); 
+/*Array.prototype.myMap = function(callback) {
+    let newArray = [];
+    for(let i = 0; i < this.length; i++) {
+        newArray.push(callback(this[i]));
+    }
+    return newArray;
+}
+let filterValue = array.myMap(element => element + 5);
+console.log(filterValue);*/
 
-// function myMap(array, callback) {
-//     const newArray = [];
-//     for(let i = 0; i < array.length; i++ ) {
-//             newArray.push(callback(array[i]));
-//     }
-//     return newArray;
-// }
+/*Array.prototype.myFind = function(callback) {
+    for(let i = 0; i < this.length; i++) {
+       if(callback(this[i])) {
+            return this[i];
+        }  
+    }
+}
+    
+console.log(array.myFind(element => element < 70));*/
 
-// console.log(myMap(array, element => element * 2));
+/*Array.prototype.myFindIndex = function (callback) {
+    for(let i = 0; i < this.length; i++) {
+        if(callback(this[i])){
+            return i;
+        }  
+    }
+}
+    
+console.log(array.myFindIndex(element => element === 15))*/
 
-// var array = [4, 9, 16, 25];
-// function myFind(array, callback) {
-//     for(let i = 0; i < array.length; i++ ) {
-//       if(callback(array[i])){
-//         return array[i];
-//       }  
-//     }
-// }
+/*Array.prototype.myContains = function (callback) {
+    for(let i = 0; i < this.length; i++) {
+       if(callback(this[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+    
+console.log(array.myContains(element => element === 83));*/ 
 
-// console.log(myFind(array, element => element > 12)); 
+var array = ['pato', 'perro', 'zanahoria'];
 
-// var array = [4, 9, 16, 25];
-// function myFindIndex(array, callback) {
-//     for(let i = 0; i < array.length; i++ ) {
-//       if(callback(array[i])){
-//         return i;
-//       }  
-//     }
-//    return -1;
-// }
+/*Array.prototype.myPluck = function (name) {
+    let newArray = [];
+    for(let i = 0; i < this.length; i++) {
+        if(this[i].hasOwnProperty(name)) {
+            newArray.push(this[i][name]);
+        }
+    }
+    return newArray;
+} 
+console.log(array.myPluck('length'));*/
 
-// console.log(myFindIndex(array, element => element > 12))
+var array = ['a', 'b', 'c', 'd'];
 
-// var array = [4, 9, 16, 25];
-// function myContains(array, callback) {
-//     for(let i = 0; i < array.length; i++) {
-//       if(callback(array[i])) {
-//         return true;
-//       }
-//     }
-//   return false;
-// }
+/*Array.prototype.myWhithout = function(...items) {
+    const copyArray = Array.from(array);
+    items.map(element => {
+        var index = copyArray.indexOf(element);
+        if(index > -1){
+            copyArray.splice(copyArray.indexOf(element),1);
+        }
+    });
+    return copyArray;   
+}
 
-// console.log(myContains(array, element => element === 79)); 
-
-// var arreglo = [{nombre: 'moe', edad: 40}, {nombre: 'larry', edad: 50}, {nombre: 'rizado', edad: 60}];
-
-// function myPluck(array, propiedad) {
-//   const newArray = [];
-//   for(let i = 0; i < array.length; i++) {
-//     newArray.push(array[i][propiedad]);
-//   }
-//   return newArray;
-// }
-
-// console.log(myPluck(arreglo,'edad')); 
-
-
-function myPluck(array, propiedad) {
-    //   const newArray = [];
-    //   for(let i = 0; i < array.length; i++) {
-    //     newArray.push(array[i][propiedad]);
-    //   }
-    //   return newArray;
-    // }
+console.log(array.myWhithout('c', 'b'));*/

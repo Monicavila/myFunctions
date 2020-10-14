@@ -5,17 +5,22 @@ function select() {
     eachFunction.name == selectAFunctionValue);
 
     // display form inputs
-    var y = document.getElementById('data1');
-    var x = document.getElementById('data2');
+    var x = document.getElementById('data1');
+    var y = document.getElementById('data2');
+    var z = document.getElementById('btn-submit');
     if (y.style.display === 'none') {
         y.style.display = 'block';
     }
     if (x.style.display === 'none') {
         x.style.display = 'block';
     }
+    if (z.style.display === 'none') {
+        z.style.display = 'block';
+    }
     if (selectAFunctionValue === 'noSelection') {
-        y.style.display = 'none';
         x.style.display = 'none';
+        y.style.display = 'none';
+        z.style.display = 'none';
     } 
 
     document.getElementById('explanation').innerHTML= selectedFunction.text;
